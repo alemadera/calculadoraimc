@@ -167,12 +167,12 @@ def mostrar_dashboard():
         st.markdown('<div class="col1-padding">', unsafe_allow_html=True)
         nombre = st.text_input("Nombre del Paciente")
         sexo = st.radio("Sexo", ["Femenino", "Masculino"], index=0, horizontal=True)
-        edad = st.number_input("Edad", min_value=18, max_value=80, value=30)
-        altura = st.number_input("Altura (m)", min_value=1.0, max_value=2.5, value=1.7)
-        peso = st.number_input("Peso (kg)", min_value=30.0, max_value=200.0, value=70.0)
-        grasa = st.number_input("% Grasa", min_value=5.0, max_value=50.0, value=20.0)
-        musculo = st.number_input("% Músculo", min_value=20.0, max_value=60.0, value=35.0)
-        grasa_visceral = st.number_input("Grasa Visceral", min_value=1.0, max_value=30.0, value=10.0)
+        edad = st.number_input("Edad", min_value=18, max_value=80)
+        altura = st.number_input("Altura (m)", min_value=1.0, max_value=2.5)
+        peso = st.number_input("Peso (kg)", min_value=30.0, max_value=200.0)
+        grasa = st.number_input("% Grasa", min_value=5.0, max_value=50.0)
+        musculo = st.number_input("% Músculo", min_value=20.0, max_value=60.0)
+        grasa_visceral = st.number_input("Grasa Visceral", min_value=1.0, max_value=30.0)
         st.markdown('</div>', unsafe_allow_html=True)  # Cierra la etiqueta del div con padding
     
     if st.button("Calcular"):
