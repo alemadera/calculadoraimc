@@ -201,14 +201,15 @@ def mostrar_dashboard():
                         <p><b>Índice de Grasa Visceral:</b><br> {grasa_visceral} ({clasificacion_grasa_visceral})<br><i>Rango normal: Menos de 9</i></p>
                         <br>
                         <h4>Resumen</h4>
-                        <p>Fecha: {fecha_actual}<br>
-                            Paciente: {nombre}<br>
-                            IMC: {imc} ({clasificacion_imc})<br>
-                            % Grasa: {grasa} ({clasificacion_grasa}) - <b>Peso de grasa:</b> {peso_grasa} kg<br>
-                            % Músculo: {musculo} ({clasificacion_musculo}) - <b>Peso de músculo:</b> {peso_musculo} kg<br>
-                            Grasa Visceral: {grasa_visceral} ({clasificacion_grasa_visceral})
+                        <p><b>Fecha:</b> {fecha_actual}<br>
+                            <b>Paciente:</b> {nombre}<br>
+                            <b>IMC:</b> {imc} ({clasificacion_imc})<br>
+                            <b>% Grasa:</b> {grasa} ({clasificacion_grasa})<br>
+                            <b>Peso de grasa:</b> {peso_grasa} kg<br>
+                            <b>% Músculo:</b> {musculo} ({clasificacion_musculo})<br>
+                            <b>Peso de músculo:</b> {peso_musculo} kg<br>
+                            <b>Grasa Visceral:</b> {grasa_visceral} ({clasificacion_grasa_visceral})
                         </p>
-
                     </div>
                 </div>
                 """, unsafe_allow_html=True
