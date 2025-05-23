@@ -170,7 +170,7 @@ def mostrar_dashboard():
         edad = st.number_input("Edad", min_value=18, max_value=80)
         altura = st.number_input("Altura (m)", min_value=1.0, max_value=2.5)
         peso = st.number_input("Peso (kg)", min_value=30.0, max_value=200.0)
-        grasa = st.number_input("% Grasa", min_value=5.0, max_value=50.0)
+        grasa = st.number_input("% Grasa", min_value=5.0, max_value=70.0)
         musculo = st.number_input("% Músculo", min_value=20.0, max_value=60.0)
         grasa_visceral = st.number_input("Grasa Visceral", min_value=1.0, max_value=30.0)
         st.markdown('</div>', unsafe_allow_html=True)  # Cierra la etiqueta del div con padding
@@ -183,6 +183,9 @@ def mostrar_dashboard():
         clasificacion_grasa_visceral = clasificar_grasa_visceral(grasa_visceral)
         peso_ideal_min, peso_ideal_max = calcular_peso_ideal(altura)
         fecha_actual = datetime.now().strftime("%d/%m/%Y")
+        peso_grasa = round((grasa / 100) * peso, 2)
+        peso_musculo = round((musculo / 100) * peso, 2)
+
         
         # Aquí se asegura que esté correctamente indentado dentro de 'with col2:'
         with col2:
@@ -198,7 +201,14 @@ def mostrar_dashboard():
                         <p><b>Índice de Grasa Visceral:</b><br> {grasa_visceral} ({clasificacion_grasa_visceral})<br><i>Rango normal: Menos de 9</i></p>
                         <br>
                         <h4>Resumen</h4>
-                        <p>Fecha: {fecha_actual}<br>Paciente: {nombre}<br>IMC: {imc} ({clasificacion_imc})<br>% Grasa: {grasa} ({clasificacion_grasa})<br>% Músculo: {musculo} ({clasificacion_musculo})<br>Grasa Visceral: {grasa_visceral} ({clasificacion_grasa_visceral})</p>
+                        <p>Fecha: {fecha_actual}<br>
+                            Paciente: {nombre}<br>
+                            IMC: {imc} ({clasificacion_imc})<br>
+                            % Grasa: {grasa} ({clasificacion_grasa}) - <b>Peso de grasa:</b> {peso_grasa} kg<br>
+                            % Músculo: {musculo} ({clasificacion_musculo}) - <b>Peso de músculo:</b> {peso_musculo} kg<br>
+                            Grasa Visceral: {grasa_visceral} ({clasificacion_grasa_visceral})
+                        </p>
+
                     </div>
                 </div>
                 """, unsafe_allow_html=True
