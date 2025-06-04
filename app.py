@@ -171,7 +171,7 @@ def mostrar_dashboard():
         altura = st.number_input("Altura (m)", min_value=1.0, max_value=2.5)
         peso = st.number_input("Peso (kg)", min_value=30.0, max_value=200.0)
         grasa = st.number_input("% Grasa", min_value=5.0, max_value=70.0)
-        musculo = st.number_input("% Músculo", min_value=20.0, max_value=60.0)
+        musculo = st.number_input("% Músculo", min_value=10.0, max_value=60.0)
         grasa_visceral = st.number_input("Grasa Visceral", min_value=1.0, max_value=30.0)
         st.markdown('</div>', unsafe_allow_html=True)  # Cierra la etiqueta del div con padding
     
